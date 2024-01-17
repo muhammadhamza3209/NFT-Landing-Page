@@ -2,26 +2,106 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+
+body{
+  background-color: #2B2B2B;
+  color: white;
+};
+
+
+
+
+*{
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+
+nav{
+  width: 100% ;
+  display: flex;
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  padding: 30px 40px 20px 40px;
+}
+
+.logo{
+  color: white;
+  font-size: 30px;
+}
+
+nav ul li{
+  margin: 0px 30px;
+  font-size: 20px;
+}
+
+
+nav ul{
+  display: flex;
+  list-style: none;
+  align-items: center;
+}
+
+nav ul li a{
+  color: white;
+  text-decoration: none;
+}
+
+
+label{
+  display: none;
+
+}
+
+
+#click{
+  display: none;
+}
+
+
+
+@media (max-width:940px){
+  nav{
+    padding: 30px 20px 20px 15px;
   }
+  nav ul{
+      position: fixed;
+      top: 80px;
+      left:-100%;
+      background: rgb(87, 138, 87);
+      height: 100vh;
+      width: 100%;
+      display: block;
+      text-align: center;
+      transition: 0.5s;
+  }
+
+  #click:checked ~ul{
+      left: 0%;
+  }
+
+  label{
+      display: block;
+      cursor: pointer;
+  }
+  
+
+  nav ul li{
+      margin: 30px 0px;
+  }
+
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+
+
+.aaa{
+  background-image: url('../public/bg-img.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100%;
+  width: 100%;
 }
